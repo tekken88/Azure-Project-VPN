@@ -4,7 +4,7 @@ resource "azurerm_local_network_gateway" "localgwhub" {
   resource_group_name = var.resource_group_name
   location            = azurerm_virtual_network.terraform_vnet_east.location
   gateway_address     = azurerm_public_ip.eastus-vpn-gateway-pip.ip_address
-  address_space       = azurerm_virtual_network.terraform_vnet_east.address_space 
+  address_space       = ["10.0.0.0/16","10.2.0.0/16"]
 }
 
 # Local Network Gateway ONSITE 
